@@ -1,0 +1,81 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    max-width: 1600px !important;
+  }
+  
+  .chat-grid {
+    height: 100%;
+  }
+  
+  .chat-messages {
+    flex: 1;
+    overflow-y: scroll;
+  }
+  
+  .chat-input {
+    display: flex;
+    flex-direction: column;
+    height: 10%;
+  }
+  
+
+  #sendMessage {
+    background-color: white;
+    padding:1.5rem;
+    border-radius: 30px;
+    margin:0 !important;
+  }
+  .user1 {
+    background-color: #007BFF;
+    color: #252121;
+    align-self: flex-end;
+    border-radius: 10px;
+    width: fit-content !important;
+    padding: 4px;
+    margin-bottom:10px;
+  }
+  
+  .user2 {
+    background-color: yellow;
+    color: #252121;
+    align-self: flex-start;
+    border-radius: 10px;
+    width: fit-content !important;
+    padding: 4px;
+    margin-bottom:10px;
+  }
+  
+  body, #root {
+    width: 100%;
+  }
+  
+  @media (min-width: 1200px) {
+    .css-1oqqzyl-MuiContainer-root {
+      max-width: 100% !important;
+    }
+  }
+  
+
+  .ChannelView {
+    height: 15%;
+    width: 100%;
+    background-color: #2A2A2A;
+    margin: 1vh;
+    border-radius: 1vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .containerLeft{
+    width: 25% !important;
+    height: 100vh;
+    background-color: #0F3C4F;
+    border-radius: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
