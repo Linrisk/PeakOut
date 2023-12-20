@@ -8,11 +8,12 @@ import "./index.css";
 import SignIn from './pages/SignIn';
 import SignOut from './pages/SignOut';
 import HomePage from './pages/HomePage';
+import LogIn from './pages/LogIn';
 
-import firebase from 'firebase';
-import { initializeApp } from "firebase/app";
+//import firebase from 'firebase';
+//import { initializeApp } from "firebase/app";
 
-const firebaseConfig = {
+/*const firebaseConfig = {
   apiKey: process.env.REACT_APP_apiKey,
   authDomain: process.env.REACT_APP_authDomain,
   projectId: process.env.REACT_APP_projectId,
@@ -21,29 +22,33 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_appId,
   measurementId: process.env.REACT_APP_measurementId
 };
+*/
+//const app = initializeApp(firebaseConfig);
 
-const app = initializeApp(firebaseConfig);
- 
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage/>,
+    element: <HomePage />,
   },
   {
     path: "/signin",
-    element: <SignIn/>,
+    element: <SignIn />,
   },
   {
     path: "/signOut",
-    element: <SignOut/>,
+    element: <SignOut />,
+  },
+  {
+    path: "/login",
+    element: <LogIn />,
   }
- 
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
