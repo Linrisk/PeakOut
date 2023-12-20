@@ -15,6 +15,7 @@ import Discover from './pages/connected/Discover';
 import ChatView from './pages/connected/ChatView';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+//import { getAuth } from "firebase/auth";
  
 
 const firebaseConfig = {
@@ -72,3 +73,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <RouterProvider router={router}/>
   </React.StrictMode>
 );
+
+//export const auth = getAuth(app);
