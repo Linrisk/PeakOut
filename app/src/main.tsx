@@ -9,12 +9,13 @@ import SignIn from './pages/SignIn';
 import SignOut from './pages/SignOut';
 import HomePage from './pages/HomePage';
 import HomeView from './pages/connected/HomeView';
-
+import Login from './pages/LogIn';
 import Profile from './pages/connected/Profile';
 import Discover from './pages/connected/Discover';
 import ChatView from './pages/connected/ChatView';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+//import { getAuth } from "firebase/auth";
  
 
 const firebaseConfig = {
@@ -38,11 +39,11 @@ try {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage/>,
+    element: <HomePage />,
   },
   {
     path: "/signin",
-    element: <SignIn/>,
+    element: <SignIn />,
   },
   {
     path: "/signOut",
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
   {
     path: "/app",
     element: <HomeView/>,
+  },
+  {
+    path: "/login",
+    element: <Login/>,
   },
   {
     path: "/profile",
@@ -64,11 +69,13 @@ const router = createBrowserRouter([
     path: "/chatView",
     element: <ChatView/>,
   }
- 
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
+
+//export const auth = getAuth(app);
