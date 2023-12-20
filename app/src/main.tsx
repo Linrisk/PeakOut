@@ -8,6 +8,25 @@ import "./index.css";
 import SignIn from './pages/SignIn';
 import SignOut from './pages/SignOut';
 import HomePage from './pages/HomePage';
+<<<<<<< HEAD
+import LogIn from './pages/LogIn';
+
+//import firebase from 'firebase';
+//import { initializeApp } from "firebase/app";
+
+/*const firebaseConfig = {
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
+  measurementId: process.env.REACT_APP_measurementId
+};
+*/
+//const app = initializeApp(firebaseConfig);
+
+=======
 import HomeView from './pages/connected/HomeView';
 
 import Profile from './pages/connected/Profile';
@@ -17,6 +36,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 //import { getAuth } from "firebase/auth";
  
+>>>>>>> 727b6a56969b36f6bb6dd82c898e69d17824c27e
 
 const firebaseConfig = {
   apiKey: "AIzaSyD_xaXDa2TdR8U3tcOIra65huNhB4VPCQE",
@@ -39,14 +59,21 @@ try {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage/>,
+    element: <HomePage />,
   },
   {
     path: "/signin",
-    element: <SignIn/>,
+    element: <SignIn />,
   },
   {
     path: "/signOut",
+<<<<<<< HEAD
+    element: <SignOut />,
+  },
+  {
+    path: "/login",
+    element: <LogIn />,
+=======
     element: <SignOut/>,
   },
   {
@@ -64,13 +91,14 @@ const router = createBrowserRouter([
   {
     path: "/chatView",
     element: <ChatView/>,
+>>>>>>> 727b6a56969b36f6bb6dd82c898e69d17824c27e
   }
- 
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
