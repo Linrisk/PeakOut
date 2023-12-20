@@ -1,13 +1,14 @@
+import React from 'react';
+import Layout from '../../components/LayoutApp';
 
-import React,{useState} from "react";
-import '../assets/css/Login.css';
-import {Link} from 'react-router-dom';
-const Chat = () => {
+const HomePage = () => {
   return (
-    <div className="login-container">
-    <h1>Accueil </h1>
-    </div>
+    <Layout>
+      <div>
+        <h1>chatView</h1>
+      </div>
+    </Layout>
   );
 };
 
-export default Chat;
+export default HomePage;
