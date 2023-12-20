@@ -67,13 +67,6 @@ const router = createBrowserRouter([
   },
   {
     path: "/signOut",
-<<<<<<< HEAD
-    element: <SignOut />,
-  },
-  {
-    path: "/login",
-    element: <LogIn />,
-=======
     element: <SignOut/>,
   },
   {
@@ -91,7 +84,6 @@ const router = createBrowserRouter([
   {
     path: "/chatView",
     element: <ChatView/>,
->>>>>>> 727b6a56969b36f6bb6dd82c898e69d17824c27e
   }
 
 ]);
