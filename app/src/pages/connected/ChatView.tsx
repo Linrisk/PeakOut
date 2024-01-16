@@ -13,6 +13,7 @@ import use8 from '../../assets/images/use8.jpg';
 import use9 from '../../assets/images/use9.jpg';
 import use10 from '../../assets/images/use10.jpg';
 
+import '../../assets/css/Chat.css';
 
 const ChatView = () => {
   const recentUsers = [
@@ -74,9 +75,12 @@ const ChatView = () => {
 
   return (
     <Layout>
-      <div className="chat-view" style={{ paddingTop: '35%' }}>
+      <div className="chat-view" style={{  }}>
         <div className="recent-users" style={{ height: '20%' }}>
-          <h3>Dernières conversations</h3>
+          <div className="row-last-conversation">
+          <h3 className="last-conversations-title">Dernières conversations</h3>
+
+          </div>
           <div className="scrollable-users">
             {recentUsers.map((user, index) => (
               <RecentUserBubble
@@ -85,7 +89,7 @@ const ChatView = () => {
               />
             ))}
           </div>
-          <h3>Messages</h3>
+          <h3 className="list-messages-title">Messages</h3>
           <div className="message-list" style={{ height: 'fit-content', alignItems:'center',justifyContent: 'space-evenly', padding: '0.5rem', display: 'flex', flexDirection:'column' }}>
           {recentUsers.map((user, index) => (
             <div key={index} className="message" style={{ height: 'fit-content', justifyContent: 'center', padding: '0.7rem',margin:'0.5rem', display: 'flex', borderRadius: 5, width: '100%' }}>

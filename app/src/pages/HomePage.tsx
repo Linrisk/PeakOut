@@ -10,8 +10,8 @@ const HomeView: React.FC = () => {
         justifyContent: "center",
         alignItems: "center",
         height: "100%",
-        display:'flex',
-        flexDirection:'column'
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       <img src={LogoP} alt="Icône" className="icon" />
@@ -24,12 +24,13 @@ const HomeView: React.FC = () => {
           flexDirection: "column",
         }}
       >
-        <button className="btn" style={{ margin: 5 }}>
-          Se connecter
-        </button>
+        <Link to="/login">
+          <button className="type2" style={{ margin: 5 }}>
+            Se connecter
+          </button>
+        </Link>
         <Link to="/signIn">
-     
-          <button className="btn" style={{ margin: 5 }}>
+          <button className="type1" style={{ margin: 5 }}>
             S'inscrire
           </button>
         </Link>

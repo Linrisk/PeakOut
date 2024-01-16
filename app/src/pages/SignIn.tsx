@@ -1,12 +1,18 @@
 import React, { useState } from "react";
-import "./signIn.css";
-import LogoP from "/logo_p.svg";
+import "../assets/css/Login.css";
+import PeakOutLogo from "../assets/RedPeakOut.png";
+import "../assets/css/Global.css";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { FaArrowLeft } from "react-icons/fa";
+const SignIn = () => {
+  const [nom, setNom] = useState("");
+  const [password, setPassword] = useState("");
+  const [pseudo, setPseudo] = useState("");
 
-const RegisterPage: React.FC = () => {
+  const [prenom, setPrenom] = useState("");
+
   let navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -30,84 +36,99 @@ const RegisterPage: React.FC = () => {
   };
 
   return (
-    <div className="register-container">
-      <div className="row-back" onClick={() => navigate(-1)}>
-      <FaArrowLeft />
-      </div>
-      <h1 className="h1-register">S'inscrire</h1>
-      <img src={LogoP} className="logoP" alt="Vite logo" />
+    <div className="login-container">
+      <form className="login-form">
+        <h2>S'inscrire</h2>
+        <img
+          src={PeakOutLogo}
+          className="PeakOutLogo"
+          alt="Logo"
+          style={{ width: "300px", height: "auto" }}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="Nom d'utilisateur"
+          id="pseudo"
+          name="pseudo"
+          value={pseudo}
+          onChange={(e) => setPseudo(e.target.value)}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Nom"
+          id="nom"
+          name="nom"
+          value={nom}
+          onChange={(e) => setNom(e.target.value)}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Prenom"
+          id="prenom"
+          name="prenom"
+          value={prenom}
+          onChange={(e) => setPseudo(e.target.value)}
+          required
+        />
 
-      <form className="inscription-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="lastName">Nom</label>
-          <input type="text" id="lastName" name="lastName" required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="firstName">Prénom:</label>
-          <input type="text" id="firstName" name="firstName" required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="username">Pseudo:</label>
-          <input type="text" id="username" name="username" required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Adresse Mail:</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="phone">Téléphone:</label>
-          <input type="tel" id="phone" name="phone" required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Mot de passe</label>
-          <div
-            className="password-group"
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              width: "100%",
-            }}
-          >
-            <input
-              type={showPassword ? "text" : "password"}
-              id="password"
-              name="password"
-              required
-            />
-            <div className="icon-eye  " onClick={toggleShowPassword}>
-              {showPassword ? <FaEye /> : <FaEyeSlash />}
-            </div>
-          </div>
-        </div>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="mail"
+          required
+          style={{ width: "100%", height: "2rem" }}
+        />
+        <input
+          type="tel"
+          id="phone"
+          placeholder="phone"
+          name="phone"
+          required
+          style={{ width: "100%", height: "2rem", marginTop: "1rem" }}
+        />
+        <input
+          type={showPassword ? "text" : "password"}
+          id="password"
+          name="password"
+          placeholder="confirmPassword"
+          required
+          style={{ width: "100%", height: "2rem", marginTop: "1rem" }}
+        />
 
-        <div className="form-group">
-          <label htmlFor="confirmPassword">Confirmation Mot de passe</label>
-          <div
-            className="password-group"
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              width: "100%",
-            }}
-          >
-            <input
-              type={showConfirmPassword ? "text" : "password"}
-              id="confirmPassword"
-              name="confirmPassword"
-              required
-            />
-            <div className="icon-eye  " onClick={toggleShowConfirmPassword}>
-              {showConfirmPassword ? <FaEye /> : <FaEyeSlash />}
-            </div>
-          </div>
-        </div>
+        <input
+          type={showPassword ? "text" : "password"}
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="confirmPassword"
+          required
+          style={{ width: "100%", height: "2rem", marginTop: "1rem" }}
+        />
 
-        <button type="submit">S'inscrire</button>
+        <div
+          style={{
+            width: "100%",
+            height: "30%",
+            marginTop: "2rem",
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+             <Link to="/login"><label htmlFor="email">Déjà un compte ?</label></Link>
+          <Link to="/app">
+            <button type="submit" className="type2">
+              S'inscrire
+            </button>
+          </Link>
+        </div>
       </form>
     </div>
   );
 };
 
-export default RegisterPage;
+export default SignIn;

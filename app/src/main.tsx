@@ -13,6 +13,7 @@ import Login from './pages/LogIn';
 import Profile from './pages/connected/Profile';
 import Discover from './pages/connected/Discover';
 import ChatView from './pages/connected/ChatView';
+import Settings from './pages/connected/Settings';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 //import { getAuth } from "firebase/auth";
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
   {
     path: "/chatView",
     element: <ChatView/>,
+  },
+  {
+    path: "/settings",
+    element: <Settings/>,
   }
 
 ]);

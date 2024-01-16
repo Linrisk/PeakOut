@@ -10,7 +10,7 @@ const Login = () => {
     return (
         <div className="login-container">
             <form className="login-form">
-                <h1>Se connecter</h1>
+                <h1 className="title-login">Se connecter</h1>
                 <img
                     src={PeakOutLogo}
                     className="PeakOutLogo"
@@ -42,14 +42,17 @@ const Login = () => {
                         id="remember-me"
                         name="remember-me"
                     />
-                    <label htmlFor="email">Rester connecté</label>
+                    <label htmlFor="email" className="label-stay-connected">Rester connecté</label>
                 </div>
                 <br />
-                <Link to={`/chat?nom=${nom}`}>Mot de passe oublié ?</Link>
+                <Link to="/forgotpassword" className="label-forget-password">Mot de passe oublié ?</Link>
                 <br />
-                <Link to={`/chat?nom=${nom}`}><button type="submit" className="type1">Se connecter</button></Link>
+                <div className="button-container-login">
+                <Link to="/app"><button type="submit" className="type1">Se connecter</button></Link>
                 <label htmlFor="email">Pas encore de compte ?</label>
-                <Link to={`/chat?nom=${nom}`}><button type="submit" className="type2">S'inscrire</button></Link>
+                <Link to="/signIn"><button type="submit" className="type2">S'inscrire</button></Link>
+                </div>
+                
             </form>
         </div >
     );
