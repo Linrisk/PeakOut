@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../../components/LayoutApp";
 import Smiley from "../../assets/smile_icon.svg";
+import '../../assets/css/Global.css';
 import "./Profile.css";
 import PhotoE from "../../assets/images/use3.jpg";
 import PhotoEv2 from "../../assets/images/use4.jpg";
@@ -26,43 +27,18 @@ const Profile = () => {
     <Layout>
       <div
         className="container-profile"
-        style={{
-          height: "100%",
-          width: "100%",
-          paddingTop: "20%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
+
       >
         <div
           className="containerInformations"
-          style={{
-            height: "30%",
-            width: "100%",
-            alignItems: "center",
-            justifyContent: "center",
-            display: "flex",
-            flexDirection: "column",
-          }}
+
         >
-          <div
-            style={{
-              height: "150px",
-              width: "150px",
-              borderRadius: "5rem",
-              backgroundColor: "yellow",
-            }}
+          <div className="photoProfile"
+
           ></div>
-          <h2>Lisa Tenever</h2>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              width: "100%",
-            }}
+          <h2 className="ProfilName">Lisa Tenever</h2>
+          <div className="containerSmiley"
+
           >
             <img src={Smiley} className="smileyProfile" alt="React logo" />
             <img src={Smiley} className="smileyProfile" alt="React logo" />
@@ -71,42 +47,25 @@ const Profile = () => {
         </div>
         <div
           className="containerEvents"
-          style={{ height: "50%", width: "100%", paddingLeft: 2 }}
         >
           <h2 style={{ paddingLeft: "1rem" }}>
             {eventsData.length} événements
           </h2>
-          <div className="listEvents" style={{ padding: "0.5rem", display:'flex',flexWrap:'wrap',justifyContent:'space-between' }}>
+          <div className="listEvents">
             {eventsData.map((event, index) => (
               <div
                 key={index}
                 className="event"
-                style={{
-                  height: "fit-content",
-                  padding: "0.5rem",
-                  width: "150px",
-                  backgroundColor: "blue",
-                  borderRadius: "5%",
-                }}
+
               >
                 <div
                   className="info-cardEvent"
-                  style={{
-                    width: "100%",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
+
                 >
                   <div className="imgEvent">
                     <img
                       src={event.imageUrl}
                       className="photoEvent"
-                      alt="Event"
-                      style={{
-                        height: "80px",
-                        width: "80px",
-                        borderRadius: "2%",
-                      }}
                     />
                   </div>
                   <div className="infoEvent">

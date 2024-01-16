@@ -1,4 +1,79 @@
 .smileyProfile {
-   padding:0.65rem;
-   padding-top:0;
+   padding: 0.65rem;
+   padding-top: 0;
+}
+
+
+
+.containerInformations {
+   height: 30%;
+   width: 100%;
+   align-items: center;
+   justify-content: center;
+   display: flex;
+   flex-direction: column;
+}
+
+.photoProfile {
+   height: 150px;
+   width: 150px;
+   border-radius: 5rem;
+   background-color: #ff747c;
+}
+
+.infoProfile {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   width: 100%;
+}
+
+.containerSmiley {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   width: 100%;
+}
+
+.containerEvents {
+   height: 50%;
+   width: 100%;
+   padding-left: 2px;
+}
+
+.listEvents {
+   padding: 0.5rem;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.event {
+   height: fit-content;
+   padding: 0.5rem;
+   width: 150px;
+   background-color: rgb(232, 236, 236);
+   border-radius: 5%;
+}
+
+.info-cardEvent {
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+}
+
+.photoEvent {
+   height: 80px;
+   width: 80px;
+   border-radius: 2%;
+}
+
+.container-profile {
+   height: 100%;
+   width: 100%;
+   padding-top: 20%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
 }
