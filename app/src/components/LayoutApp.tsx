@@ -12,12 +12,12 @@ const NavBar = () => {
 
 const Layout = ({ children }) => {
     return (
-      <div className="app">
-        <Header />
-        <main>
+      <div className="app" style={{height:'100%', width:'100%'}}>
+        <Header style={{height:'5%'}} />
+        <main style={{height:'80%'}} >
           {children} {/* Affiche le contenu de la route parente */}
         </main>
-        <NavBar />
+        <NavBar style={{height:'17%'}}  />
       </div>
     );
   };
