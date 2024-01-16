@@ -18,9 +18,8 @@
 }
 
 .header-text {
-  text-align: center;
   font-size: 10px;
-  width: 50%;
+  width: 75%;
 }
 
 .header-icon {
@@ -29,7 +28,8 @@
 
 .header-icon a {
   text-decoration: none;
-  color: #333;
+  padding-top: 20px;
+  color: white;
 }
 
 .header-text h1 {
