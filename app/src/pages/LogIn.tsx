@@ -47,9 +47,9 @@ const Login = () => {
                 <br />
                 <Link to={`/chat?nom=${nom}`}>Mot de passe oublié ?</Link>
                 <br />
-                <Link to={`/chat?nom=${nom}`}><button type="submit" className="type1">Se connecter</button></Link>
+                <Link to="/app"><button type="submit" className="type1">Se connecter</button></Link>
                 <label htmlFor="email">Pas encore de compte ?</label>
-                <Link to={`/chat?nom=${nom}`}><button type="submit" className="type2">S'inscrire</button></Link>
+                <Link to="/signIn"><button type="submit" className="type2">S'inscrire</button></Link>
             </form>
         </div >
     );

@@ -74,7 +74,7 @@ const ChatView = () => {
 
   return (
     <Layout>
-      <div className="chat-view" style={{ paddingTop: '35%' }}>
+      <div className="chat-view" style={{  }}>
         <div className="recent-users" style={{ height: '20%' }}>
           <h3>Dernières conversations</h3>
           <div className="scrollable-users">
