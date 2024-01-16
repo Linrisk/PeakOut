@@ -11,7 +11,7 @@ const Settings = () => {
   return (
 
     <div className="container-fluid container-settings">
-      <div className="col-lg-12">
+      <div className="col-lg-12 h-100" style={{height:'100%'}} >
       <div className="row contain-back-icon">
           <IoMdArrowBack onClick={goBack} className="icon-back"/>
         </div>
@@ -32,17 +32,14 @@ const Settings = () => {
         </div>
         <hr/>
         <div className="row row-contain-settings">
-          <button placeholder="profile" className="button-settings">
-            <p>Profile</p>
+        <button placeholder="informations" className="button-settings">
+            <p>Mes informations</p>
           </button>
-
           <button placeholder="Gerer mes events" className="button-settings">
             <p>Gérér mes évents</p>
           </button>
 
-          <button placeholder="informations" className="button-settings">
-            <p>Mes informations</p>
-          </button>
+          
 
           <button placeholder="helpcenter" className="button-settings">
             <p>Centre d'aide</p>

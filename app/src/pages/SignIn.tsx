@@ -36,15 +36,16 @@ const SignIn = () => {
   };
 
   return (
-    <div className="login-container">
+    <div className="login-container" style={{height:'100%'}}>
       <form className="login-form">
-        <h2>S'inscrire</h2>
+      
         <img
           src={PeakOutLogo}
           className="PeakOutLogo"
           alt="Logo"
-          style={{ width: "300px", height: "auto" }}
+          style={{ width: "150px", height: "auto" }}
         />
+          <h2>S'inscrire</h2>
         <br />
         <input
           type="text"
@@ -112,7 +113,7 @@ const SignIn = () => {
           style={{
             width: "100%",
             height: "30%",
-            marginTop: "2rem",
+            marginTop:'3%',
             justifyContent: "center",
             alignItems: "center",
             display: "flex",
@@ -120,7 +121,7 @@ const SignIn = () => {
           }}
         >
              <Link to="/login"><label htmlFor="email">Déjà un compte ?</label></Link>
-          <Link to="/app">
+          <Link to="/app" style={{marginTop:'0.3rem'}}>
             <button type="submit" className="type2">
               S'inscrire
             </button>
