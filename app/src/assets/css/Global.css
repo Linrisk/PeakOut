@@ -21,6 +21,23 @@ body {
     background-color: rgb(224, 236, 236);
 }
 
+input[type="checkbox"] {
+    border: 2px solid #ff747c;
+    background-color: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+}
+
+input[type="checkbox"]:checked {
+    background-color: transparent;
+    border-color: rgb(256, 116, 124);
+    /* Remplacez #ff0000 par la couleur de votre choix */
+}
+
 input::placeholder {
     text-align: center;
     font-style: italic;
