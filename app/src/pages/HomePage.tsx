@@ -1,5 +1,5 @@
 import React from "react";
-import LogoP from "/logo_p.svg";
+import LogoP from "../../src/assets/images/logo_p.svg";
 import { Link } from "react-router-dom";
 import '../assets/css/Global.css';
 
