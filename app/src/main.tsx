@@ -17,7 +17,7 @@ import Settings from './pages/connected/Settings';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 //import { getAuth } from "firebase/auth";
- 
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyD_xaXDa2TdR8U3tcOIra65huNhB4VPCQE",
@@ -48,31 +48,31 @@ const router = createBrowserRouter([
   },
   {
     path: "/signOut",
-    element: <SignOut/>,
+    element: <SignOut />,
   },
   {
     path: "/app",
-    element: <HomeView/>,
+    element: <HomeView />,
   },
   {
     path: "/login",
-    element: <Login/>,
+    element: <Login />,
   },
   {
     path: "/profile",
-    element: <Profile/>,
+    element: <Profile />,
   },
   {
     path: "/discover",
-    element: <Discover/>,
+    element: <Discover />,
   },
   {
     path: "/chatView",
-    element: <ChatView/>,
+    element: <ChatView />,
   },
   {
     path: "/settings",
-    element: <Settings/>,
+    element: <Settings />,
   }
 
 ]);
