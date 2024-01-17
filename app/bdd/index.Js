@@ -21,9 +21,12 @@ app.post('/api/createUser', (req,res)=> {
     const email = req.body.email;
     const phone = req.body.phone;
     
-    db.query("INSERT INTO test_user (null, post_text, user_name) VALUES (?,?,?)",[title,text,username], (err,result)=>{
+    db.query("INSERT INTO user (pseudo_user, firstName_user, lastName_user, mail_user, phone_user) VALUES  (?,?,?,?,?)",[username,firstName,lastName,email,phone], (err,result)=>{
        if(err) {
        console.log(err)
        } 
        console.log(result)
     });   })
+
+    
+
