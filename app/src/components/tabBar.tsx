@@ -11,7 +11,7 @@ const TabBar = () => {
       <Link to="/app" className="tab-item">
         <FaHome style={{fontSize:35}} />
       </Link>
-      <Link to="/profile" className="tab-item">
+      <Link to="/search" className="tab-item">
       <IoIosSearch style={{fontSize:35}} />
       </Link>
       <Link to="/discover" className="tab-item" style={{height:'60px',width:'60px',backgroundColor:'purple',display:'flex',justifyContent:'center',alignItems:'center',borderRadius:20}}>

@@ -14,6 +14,7 @@ import Profile from './pages/connected/Profile';
 import Discover from './pages/connected/Discover';
 import ChatView from './pages/connected/ChatView';
 import Settings from './pages/connected/Settings';
+import Search from './pages/connected/Search';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 //import { getAuth } from "firebase/auth";
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
   {
     path: "/settings",
     element: <Settings/>,
+  },
+  {
+    path: "/search",
+    element: <Search/>,
   }
 
 ]);
