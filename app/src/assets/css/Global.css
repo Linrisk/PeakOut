@@ -32,10 +32,22 @@ input[type="checkbox"] {
     border-radius: 0;
 }
 
+/* Styles pour la checkbox cochée avec la croix */
 input[type="checkbox"]:checked {
-    background-color: transparent;
-    border-color: rgb(256, 116, 124);
-    /* Remplacez #ff0000 par la couleur de votre choix */
+    background-color: #ff747c;
+    border-color: #ff747c;
+    color: #fff;
+}
+
+/* Styles pour la pseudo-classe ::before pour afficher la croix */
+input[type="checkbox"]:checked::before {
+    content: "\2713"; /* Code unicode pour une croix */
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    top: -2px;
 }
 
 input::placeholder {

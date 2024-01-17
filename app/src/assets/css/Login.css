@@ -30,7 +30,8 @@ form {
 }
 
 input[type="text"],
-input[type="nom"] {
+input[type="nom"],
+input[type="password"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;

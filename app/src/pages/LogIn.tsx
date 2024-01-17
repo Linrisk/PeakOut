@@ -28,7 +28,7 @@ const Login = () => {
                     required
                 />
                 <input
-                    type="text"
+                    type="password"
                     placeholder="Mot de passe"
                     id="password"
                     name="password"
