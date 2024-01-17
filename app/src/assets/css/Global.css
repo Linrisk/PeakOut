@@ -1,3 +1,9 @@
+.PeakOutLogo{
+    max-width: 80vw;
+    max-height: 50vh;
+}
+
+
 input {
     background-color: rgb(248, 116, 124);
     border-radius: 10px;

@@ -1,6 +1,8 @@
 import React from "react";
 import LogoP from "/logo_p.svg";
 import { Link } from "react-router-dom";
+import '../assets/css/Global.css';
+
 const HomeView: React.FC = () => {
   return (
     <div
@@ -14,7 +16,7 @@ const HomeView: React.FC = () => {
         flexDirection: "column",
       }}
     >
-      <img src={LogoP} alt="Icône" className="icon" />
+      <img src={LogoP} alt="Icône" className="PeakOutLogo" />
 
       <div
         style={{
