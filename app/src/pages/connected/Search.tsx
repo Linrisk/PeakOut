@@ -1,6 +1,7 @@
 import React from 'react';
-import './ChatView.css'; // Style CSS pour ce composant
+import './Search.css'; // Style CSS pour ce composant
 import Layout from '../../components/LayoutApp';
+import Header from '../../components/header';
 
 import use1 from '../../assets/images/use1.jpg';
 import use2 from '../../assets/images/use2.jpg';
@@ -15,7 +16,18 @@ import use10 from '../../assets/images/use10.jpg';
 
 import '../../assets/css/Chat.css';
 
-const ChatView = () => {
+
+
+
+const Category = () => {
+    const Home: React.FC = () => {
+        return (
+          <div>
+            <Header pageTitle="Recherche" />
+            {/* Le reste du contenu de la page d'accueil */}
+          </div>
+        );
+      };
   const recentUsers = [
     {
       name: 'Alice',
@@ -106,4 +118,4 @@ const ChatView = () => {
     </Layout>
   );
 };
-export default ChatView;
+export default Category;
