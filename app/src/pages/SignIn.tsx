@@ -6,6 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+
+import axios from 'axios';
+
+
 const SignIn = () => {
   const [nom, setNom] = useState("");
   const [password, setPassword] = useState("");
