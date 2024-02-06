@@ -17,6 +17,7 @@ import Settings from './pages/connected/Settings';
 import Search from './pages/connected/Search';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import Categories from "./pages/connected/Category_Art";
 //import { getAuth } from "firebase/auth";
 
 
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
   {
     path: "/search",
     element: <Search />,
+  },
+  {
+    path: "/categories",
+    element: <Categories />,
   }
 
 ]);

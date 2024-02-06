@@ -38,6 +38,8 @@ h1 {
     justify-content: space-around;
     margin-top: 10%;
     flex-wrap: wrap;
+    overflow-y: auto;
+    max-height: 65vh;
 }
 
 .CategoryItem {
