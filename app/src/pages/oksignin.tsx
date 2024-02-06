@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../assets/css/Login.css";
-import PeakOutLogo from "../assets/RedPeakOut.png";
+import PeakOutLogo from "../assets/logo_p.svg";
 import "../assets/css/Global.css";
 
 import { Link } from "react-router-dom";

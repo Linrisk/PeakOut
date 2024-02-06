@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../assets/css/Login.css";
-import PeakOutLogo from "../assets/RedPeakOut.png";
+import PeakOutLogo from "../../src/assets/images/logo_p.svg";
 import "../assets/css/Global.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -86,7 +86,6 @@ const SignIn = () => {
           src={PeakOutLogo}
           className="PeakOutLogo"
           alt="Logo"
-          style={{ width: "150px", height: "auto" }}
         />
         <h2>S'inscrire</h2>
         <br />
