@@ -13,7 +13,8 @@
   
   .message{
     width:100%;
-    background-color: purple;
+    background-color:#DBE9EF;
+    border-radius:1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -34,6 +35,7 @@ body,
   padding-right:1rem;
   display: flex;
   flex-direction: column;
+  background-color: white;
 }
 
 .recent-users,

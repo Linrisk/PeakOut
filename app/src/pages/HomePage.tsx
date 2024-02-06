@@ -2,11 +2,11 @@ import React from "react";
 import LogoP from "../../src/assets/images/logo_p.svg";
 import { Link } from "react-router-dom";
 import '../assets/css/Global.css';
-
+import './HomePage.css';
 const HomeView: React.FC = () => {
   return (
     <div
-      className="container"
+      className="container-HomePage"
       style={{
         width: "100%",
         justifyContent: "center",

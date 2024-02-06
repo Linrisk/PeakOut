@@ -5,6 +5,7 @@ import './tabBar.css';
 import { FaUserCircle } from "react-icons/fa";
 import { IoChatbox } from "react-icons/io5";
 import { LuPartyPopper } from "react-icons/lu";
+import { IoMdAdd } from "react-icons/io";
 const TabBar = () => {
   return (
     <div className="tab-bar" style={{height:'7%',borderRadius:'1rem 1rem 0rem 0rem'}}>
@@ -12,7 +13,7 @@ const TabBar = () => {
         <FaHome style={{fontSize:35}} />
       </Link>
       <Link to="/search" className="tab-item">
-      <IoIosSearch style={{fontSize:35}} />
+      <IoMdAdd style={{fontSize:35}} />
       </Link>
       <Link to="/discover" className="tab-item" style={{height:'60px',width:'60px',backgroundColor:'purple',display:'flex',justifyContent:'center',alignItems:'center',borderRadius:20}}>
       <LuPartyPopper style={{fontSize:25, color:'white'}} />
