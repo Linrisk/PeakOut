@@ -1,17 +1,31 @@
 import React, { useState } from "react";
 import "../assets/css/Login.css";
-import PeakOutLogo from "../assets/RedPeakOut.png";
+import PeakOutLogo from "../../src/assets/images/logo_p.svg";
 import "../assets/css/Global.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+
+import axios from "axios";
+
 const SignIn = () => {
+  function affichageUser() {
+    console.log("username" + pseudo);
+    console.log("firstname" + prenom);
+    console.log("lastname" + nom);
+    console.log("email" + mail);
+    console.log("phone" + phone);
+  }
+  
+
   const [nom, setNom] = useState("");
   const [password, setPassword] = useState("");
   const [pseudo, setPseudo] = useState("");
 
   const [prenom, setPrenom] = useState("");
+  const [mail, setMail] = useState("");
+  const [phone, setPhone] = useState("");
 
   let navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -27,6 +41,35 @@ const SignIn = () => {
     }
   }
 
+  async function createUser() {
+    const userData = {
+      userName: pseudo,
+      firstName: prenom,
+      lastName: nom,
+      email: mail,
+      phone: phone,
+    };
+
+    try {
+      const response = await fetch("/api/createUser", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
   const toggleShowPassword = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
@@ -36,16 +79,14 @@ const SignIn = () => {
   };
 
   return (
-    <div className="login-container" style={{height:'100%'}}>
-      <form className="login-form">
-      
+    <div className="login-container" style={{ height: "100%" }}>
+      <form className="login-form" onSubmit={createUser}>
         <img
           src={PeakOutLogo}
           className="PeakOutLogo"
           alt="Logo"
-          style={{ width: "150px", height: "auto" }}
         />
-          <h2>S'inscrire</h2>
+        <h2>S'inscrire</h2>
         <br />
         <input
           type="text"
@@ -71,7 +112,7 @@ const SignIn = () => {
           id="prenom"
           name="prenom"
           value={prenom}
-          onChange={(e) => setPseudo(e.target.value)}
+          onChange={(e) => setPrenom(e.target.value)}
           required
         />
 
@@ -81,6 +122,8 @@ const SignIn = () => {
           name="email"
           placeholder="mail"
           required
+          value={mail}
+          onChange={(e) => setMail(e.target.value)}
           style={{ width: "100%", height: "2rem" }}
         />
         <input
@@ -88,6 +131,8 @@ const SignIn = () => {
           id="phone"
           placeholder="phone"
           name="phone"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
           required
           style={{ width: "100%", height: "2rem", marginTop: "1rem" }}
         />
@@ -113,19 +158,20 @@ const SignIn = () => {
           style={{
             width: "100%",
             height: "30%",
-            marginTop:'3%',
+            marginTop: "3%",
             justifyContent: "center",
             alignItems: "center",
             display: "flex",
             flexDirection: "column",
           }}
         >
-             <Link to="/login"><label htmlFor="email">Déjà un compte ?</label></Link>
-          <Link to="/app" style={{marginTop:'0.3rem'}}>
-            <button type="submit" className="type2">
-              S'inscrire
-            </button>
+          <Link to="/login">
+            <label htmlFor="email">Déjà un compte ?</label>
           </Link>
+
+          <button type="submit"  className="type2">
+            S'inscrire
+          </button>
         </div>
       </form>
     </div>

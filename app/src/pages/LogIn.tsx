@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '../assets/css/Login.css';
-import PeakOutLogo from '../assets/RedPeakOut.png';
+import PeakOutLogo from '../../src/assets/images/logo_p.svg';
 import '../assets/css/Global.css';
 
 import { Link } from 'react-router-dom';
@@ -15,7 +15,6 @@ const Login = () => {
                     src={PeakOutLogo}
                     className="PeakOutLogo"
                     alt="Logo"
-                    style={{ width: '300px', height: 'auto' }}
                 />
                 <br />
                 <input
