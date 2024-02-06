@@ -1,0 +1,60 @@
+h1 {
+    color: rgb(108, 36, 52);
+    font-size: 50px;
+    text-align: left;
+    margin-top: 15%;
+
+}
+
+.Title svg {
+    color: rgb(73, 73, 73);
+    font-size: 30px;
+    position: fixed;
+    right: 3%;
+    top: 10%;
+    background-color: #e7e3ff;
+    width: 44px;
+    height: 37px;
+    border-radius: 20px;
+}
+
+.Title {
+    color: rgb(108, 36, 52);
+    font-size: 30px;
+    text-align: left;
+    display: flex;
+    border-bottom: 2px solid rgb(114, 114, 114);
+}
+
+.Category h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.CategoryItems {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin-top: 10%;
+    flex-wrap: wrap;
+}
+
+.CategoryItem {
+    background-color: blue;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin-bottom: 10%;
+}
+
+.CategoryItem h3 {
+    margin-top: 1px;
+}
+
+.CategoryItem img {
+    background-color: rgb(108, 36, 52);
+    width: 100%;
+    height: 70%;
+    border-radius: 10px 10px 0px 0px;
+}
