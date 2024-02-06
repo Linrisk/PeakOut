@@ -74,7 +74,6 @@ const router = createBrowserRouter([
   {
     path: "/settings",
     element: <Settings />,
-    element: <Settings />,
   },
   {
     path: "/search",

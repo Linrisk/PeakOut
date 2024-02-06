@@ -3,7 +3,7 @@ const db = require("./db");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3002;
+const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
@@ -14,6 +14,9 @@ app.listen(PORT, () => {
 // Route for creating a user
 app.post("/api/createUser", (req, res) => {
   console.log("API / CREATE USER CHECK");
+  console.log(req);
+  console.log("REP BODY");
+  console.log(req.body);
   const username = req.body.userName;
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
@@ -32,10 +35,10 @@ app.post("/api/createUser", (req, res) => {
   );
 });
 
-app.post("api/test",function(){
+app.post("/api/test", function(req, res) {
     console.log("API / TEST CHECK");
-   
-}
+    res.send("OK");
+});
 
 // http://localhost:3000/auth
 app.post("/api/connectUser", function (request, response) {

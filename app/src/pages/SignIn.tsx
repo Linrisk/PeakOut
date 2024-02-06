@@ -17,7 +17,6 @@ const SignIn = () => {
     console.log("email" + mail);
     console.log("phone" + phone);
   }
-  
 
   const [nom, setNom] = useState("");
   const [password, setPassword] = useState("");
@@ -41,6 +40,8 @@ const SignIn = () => {
     }
   }
 
+ 
+  
   async function createUser() {
     const userData = {
       userName: pseudo,
@@ -51,7 +52,7 @@ const SignIn = () => {
     };
 
     try {
-      const response = await fetch("/api/createUser", {
+      const response = await fetch("http://localhost:3000/api/createUser", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -69,7 +70,7 @@ const SignIn = () => {
       console.error("Error:", error);
     }
   }
-
+  
   const toggleShowPassword = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
@@ -80,7 +81,7 @@ const SignIn = () => {
 
   return (
     <div className="login-container" style={{ height: "100%" }}>
-      <form className="login-form" onSubmit={createUser}>
+      <form className="login-form">
         <img
           src={PeakOutLogo}
           className="PeakOutLogo"
@@ -170,7 +171,7 @@ const SignIn = () => {
             <label htmlFor="email">Déjà un compte ?</label>
           </Link>
 
-          <button type="submit"  className="type2">
+          <button onClick={createUser} className="type2">
             S'inscrire
           </button>
         </div>
