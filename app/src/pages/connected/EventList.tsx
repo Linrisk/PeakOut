@@ -48,6 +48,40 @@ const EventList = () => {
                         </div>
                     </div>
                 </div>
+
+                <div className='Concerts'>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1O_-ZmTDJ5vhiG74Zo0VZwlWRBeaWbIGUpg&usqp=CAU" alt="Concert" />
+                    <div className='ConcertsDesc'>
+                        <div className='ConcertsInfos'>
+                            <h2>Concert Stromae</h2>
+                            <p>Le 12/12/2023</p>
+                        </div>
+                        <div className='ConcertsPlace'>
+                            <p>23 octobre 2023</p>
+                            <p>Zénith de Toulouse</p>
+                        </div>
+                        <div>
+                            <p>Je me rends au concert de Stromae en le 23 octobre et je cherche de la...</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='Concerts'>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1O_-ZmTDJ5vhiG74Zo0VZwlWRBeaWbIGUpg&usqp=CAU" alt="Concert" />
+                    <div className='ConcertsDesc'>
+                        <div className='ConcertsInfos'>
+                            <h2>Concert Stromae</h2>
+                            <p>Le 12/12/2023</p>
+                        </div>
+                        <div className='ConcertsPlace'>
+                            <p>23 octobre 2023</p>
+                            <p>Zénith de Toulouse</p>
+                        </div>
+                        <div>
+                            <p>Je me rends au concert de Stromae en le 23 octobre et je cherche de la...</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </Layout>
     );
