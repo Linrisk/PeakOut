@@ -5,12 +5,13 @@ import { VscSettings } from "react-icons/vsc";
 import { colors } from '@mui/material';
 import "../../assets/css/Global.css"
 import "../../assets/css/EventList.css"
+// import eventsData from "../../assets/json/agenda-des-manifestations-culturelles-so-toulouse.json"
 
 const EventList = () => {
     return (
         <Layout>
             <div className='title'>
-                <h1>Discover</h1>
+                <h1>Eventlist</h1>
                 <VscSettings />
                 <IoIosSearch />
             </div>
@@ -86,5 +87,40 @@ const EventList = () => {
         </Layout>
     );
 };
+
+
+//TEST
+
+// Composant de la carte (card)
+function ArticleCard({ article }) {
+    return (
+      <div className="card">
+        <h2>{article.title}</h2>
+        <p>{article.content}</p>
+      </div>
+    );
+  }
+  
+  // Composant de la liste d'articles
+  function ArticleList() {
+    return (
+      <div className="article-list">
+        {articlesData.map(article => (
+          <ArticleCard key={article.id} article={article} />
+        ))}
+      </div>
+    );
+  }
+  
+  // Composant principal de l'application
+  function App() {
+    return (
+      <div className="App">
+        <h1>Liste des Articles</h1>
+        <ArticleList />
+      </div>
+    );
+  }
+  
 
 export default EventList;
