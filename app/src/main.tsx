@@ -18,8 +18,8 @@ import Search from './pages/connected/Search';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import Categories from "./pages/connected/Category_Art";
+import ChooseAvatar from "./pages/connected/Avatar";
 import EventList from "./pages/connected/EventList";
-
 //import { getAuth } from "firebase/auth";
 
 
@@ -85,6 +85,10 @@ const router = createBrowserRouter([
   {
     path: "/categories",
     element: <Categories />,
+  },
+  {
+    path: '/chooseAvatar',
+    element: <ChooseAvatar />,
   },
   {
     path: "/eventlist",

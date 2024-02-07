@@ -1,0 +1,27 @@
+#rowChange{
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+width: 100%;
+justify-content: space-between;
+align-items: center;
+}
+
+.btn-choose-avatar{
+    padding:0.3rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 0.2rem;
+    background-color: #ff747c;
+    height:50px;
+    width: 50px;
+    margin-bottom: 0.3rem;
+    margin:0.5rem;
+ 
+
+}
+
+.icon-options-avatar{
+    font-size:30px;
+}
