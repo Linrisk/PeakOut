@@ -9,9 +9,8 @@ h1 {
 .Title svg {
     color: rgb(73, 73, 73);
     font-size: 30px;
-    position: fixed;
-    right: 3%;
-    top: 10%;
+    margin-left: 35vw;
+    margin-top: 20%;
     background-color: #e7e3ff;
     width: 44px;
     height: 37px;
