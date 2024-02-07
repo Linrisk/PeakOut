@@ -12,7 +12,7 @@ app.listen(PORT, () => {
 });
 
 // Route for creating a user
-app.post("/api/createUser", (req, res) => {
+app.post("/api/createUser", (req) => {
   console.log("API / CREATE USER CHECK");
   console.log(req);
   console.log("REP BODY");
@@ -22,10 +22,11 @@ app.post("/api/createUser", (req, res) => {
   const lastName = req.body.lastName;
   const email = req.body.email;
   const phone = req.body.phone;
+  const password = req.body.password;
 
   db.query(
-    "INSERT INTO user (pseudo_user, firstName_user, lastName_user, mail_user, phone_user) VALUES  (?,?,?,?,?)",
-    [username, firstName, lastName, email, phone],
+    "INSERT INTO users (pseudo_user, first_name, family_name, mail, phone, password) VALUES  (?,?,?,?,?,?)",
+    [username, firstName, lastName, email, phone, password],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -35,14 +36,8 @@ app.post("/api/createUser", (req, res) => {
   );
 });
 
-<<<<<<< HEAD
 app.post("api/test", function () {
   console.log("API / TEST CHECK");
-=======
-app.post("/api/test", function(req, res) {
-    console.log("API / TEST CHECK");
-    res.send("OK");
->>>>>>> 4e092c62af0dc90ca5a9958ff6214e9519ba3112
 });
 
 // http://localhost:3000/auth
@@ -54,7 +49,7 @@ app.post("/api/connectUser", function (request, response) {
   if (username && password) {
     // Execute SQL query that'll select the account from the database based on the specified username and password
     connection.query(
-      "SELECT * FROM test_user WHERE pseudo_user = ? AND phone_user = ?",
+      "SELECT * FROM users WHERE pseudo_user = ? AND phone = ?",
       [username, password],
       function (error, results, fields) {
         // If there is an issue with the query, output the error
@@ -77,3 +72,23 @@ app.post("/api/connectUser", function (request, response) {
     response.end();
   }
 });
+
+app.post("/api/getInfoUsers", function(request){
+    connection.query(
+      "SELECT * FROM users WHERE pseudo_user = ?", [username],
+      function (error, results, fields) {
+        // If there is an issue with the query, output the error
+        if (error) throw error;
+        // If the account exists
+        if (results.length > 0) {
+
+        } else {
+          response.send("Data not load!");
+        }
+        response.end();
+      }
+    );
+});
+
+//app.post("/api/getInfoEventsUsers", function(request)){
+//app.post("/api/getInfoEvents", function(request)){

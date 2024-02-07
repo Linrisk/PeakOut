@@ -4,73 +4,22 @@ import PeakOutLogo from "../../src/assets/images/logo_p.svg";
 import "../assets/css/Global.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { FaEye } from "react-icons/fa";
-import { FaEyeSlash } from "react-icons/fa";
-
 import axios from "axios";
 
 const SignIn = () => {
-  function affichageUser() {
-    console.log("username" + pseudo);
-    console.log("firstname" + prenom);
-    console.log("lastname" + nom);
-    console.log("email" + mail);
-    console.log("phone" + phone);
-  }
-
   const [nom, setNom] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [pseudo, setPseudo] = useState("");
-
   const [prenom, setPrenom] = useState("");
   const [mail, setMail] = useState("");
   const [phone, setPhone] = useState("");
+  const [error, setError] = useState(null);
 
   let navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    let result = await submitForm(event.target);
-    if (result.error) {
-      setError(result.error);
-    } else {
-      navigate("/");
-    }
-  }
-
- 
-  
-  async function createUser() {
-    const userData = {
-      userName: pseudo,
-      firstName: prenom,
-      lastName: nom,
-      email: mail,
-      phone: phone,
-    };
-
-    try {
-      const response = await fetch("http://localhost:3000/api/createUser", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      });
-
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      const result = await response.json();
-      console.log(result);
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  }
-  
   const toggleShowPassword = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
@@ -79,9 +28,36 @@ const SignIn = () => {
     setShowConfirmPassword((prevShowPassword) => !prevShowPassword);
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    // Vérification que les mots de passe correspondent
+    if (password !== confirmPassword) {
+      setError("Les mots de passe ne correspondent pas");
+      return;
+    }
+
+    const userData = {
+      userName: pseudo,
+      firstName: prenom,
+      lastName: nom,
+      email: mail,
+      phone: phone,
+      password: password
+    };
+
+    try {
+      const response = await axios.post("http://localhost:3000/api/createUser", userData);
+      console.log(response.data);
+      navigate("/");
+    } catch (error) {
+      setError("Une erreur s'est produite lors de la création de l'utilisateur");
+      console.error("Error:", error);
+    }
+  };
+
   return (
     <div className="login-container" style={{ height: "100%" }}>
-      <form className="login-form">
+      <form className="login-form" onSubmit={handleSubmit}>
         <img
           src={PeakOutLogo}
           className="PeakOutLogo"
@@ -137,21 +113,26 @@ const SignIn = () => {
           required
           style={{ width: "100%", height: "2rem", marginTop: "1rem" }}
         />
+        
         <input
-          type={showPassword ? "text" : "password"}
+          //type={showPassword ? "text" : "password"}
           id="password"
           name="password"
-          placeholder="confirmPassword"
+          placeholder="Mot de passe"
           required
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           style={{ width: "100%", height: "2rem", marginTop: "1rem" }}
         />
 
         <input
-          type={showPassword ? "text" : "password"}
+          //type={showConfirmPassword ? "text" : "password"}
           id="confirmPassword"
           name="confirmPassword"
-          placeholder="confirmPassword"
+          placeholder="Confirmer le mot de passe"
           required
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
           style={{ width: "100%", height: "2rem", marginTop: "1rem" }}
         />
 
@@ -170,9 +151,10 @@ const SignIn = () => {
             <label htmlFor="email">Déjà un compte ?</label>
           </Link>
 
-          <button onClick={createUser} className="type2">
+          <button type="submit" className="type2">
             S'inscrire
           </button>
+          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
       </form>
     </div>
