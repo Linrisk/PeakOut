@@ -112,7 +112,7 @@ function ChooseAvatarPage() {
         margin: 0,
       }}
     >
-      <h1 style={{}}>Choose Avatar</h1>
+      <h1 style={{margin:0}}>Choose Avatar</h1>
 
       <Avatar
         style={{ width: "300px", height: "300px" }}
