@@ -1,33 +1,30 @@
 const express = require("express");
 const db = require("./db");
 const cors = require("cors");
-
+const session = require("express-session");
 const app = express();
-const PORT = 3000;
-app.use(cors());
+const PORT = 3002;
+
 app.use(express.json());
 
+// Use cors middleware without manual headers
+app.use(cors());
+
 app.listen(PORT, () => {
-  console.log(`Server is running on ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
 
 // Route for creating a user
-app.post("/api/createUser", (req) => {
-  console.log("API / CREATE USER CHECK");
-  console.log(req);
-  console.log("REP BODY");
-  console.log(req.body);
+app.post("/api/createUser", (req, res) => {
   const username = req.body.userName;
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const email = req.body.email;
   const phone = req.body.phone;
-  const password = req.body.password;
-  const avatar = 2;
 
   db.query(
-    "INSERT INTO users (pseudo_user, first_name, family_name, mail, phone, password, avatar_id) VALUES  (?,?,?,?,?,?,?)",
-    [username, firstName, lastName, email, phone, password, avatar],
+    "INSERT INTO test_user (null, post_text, user_name) VALUES (?,?,?)",
+    [title, text, username],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -35,10 +32,6 @@ app.post("/api/createUser", (req) => {
       console.log(result);
     }
   );
-});
-
-app.post("api/test", function () {
-  console.log("API / TEST CHECK");
 });
 
 // http://localhost:3000/auth
@@ -75,23 +68,3 @@ app.post("/api/connectUser", function (request, response) {
     }
   );
 });
-
-app.post("/api/getInfoUsers", function(request){
-    connection.query(
-      "SELECT * FROM users WHERE pseudo_user = ?", [username],
-      function (error, results, fields) {
-        // If there is an issue with the query, output the error
-        if (error) throw error;
-        // If the account exists
-        if (results.length > 0) {
-
-        } else {
-          response.send("Data not load!");
-        }
-        response.end();
-      }
-    );
-});
-
-//app.post("/api/getInfoEventsUsers", function(request)){
-//app.post("/api/getInfoEvents", function(request)){
