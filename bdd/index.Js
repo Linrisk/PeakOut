@@ -23,10 +23,11 @@ app.post("/api/createUser", (req) => {
   const email = req.body.email;
   const phone = req.body.phone;
   const password = req.body.password;
+  const avatar = 2;
 
   db.query(
-    "INSERT INTO users (pseudo_user, first_name, family_name, mail, phone, password) VALUES  (?,?,?,?,?,?)",
-    [username, firstName, lastName, email, phone, password],
+    "INSERT INTO users (pseudo_user, first_name, family_name, mail, phone, password, avatar_id) VALUES  (?,?,?,?,?,?,?)",
+    [username, firstName, lastName, email, phone, password, avatar],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -42,35 +43,37 @@ app.post("api/test", function () {
 
 // http://localhost:3000/auth
 app.post("/api/connectUser", function (request, response) {
-  // Capture the input fields
-  let username = request.body.username;
+  // Capture les valeurs du corps de la requête
+  let username = request.body.nom;
   let password = request.body.password;
-  // Ensure the input fields exists and are not empty
-  if (username && password) {
-    // Execute SQL query that'll select the account from the database based on the specified username and password
-    connection.query(
-      "SELECT * FROM users WHERE pseudo_user = ? AND phone = ?",
-      [username, password],
-      function (error, results, fields) {
-        // If there is an issue with the query, output the error
-        if (error) throw error;
-        // If the account exists
-        if (results.length > 0) {
-          // Authenticate the user
-          request.session.loggedin = true;
-          request.session.username = username;
-          // Redirect to home page
-          response.redirect("/home");
-        } else {
-          response.send("Incorrect Username and/or Password!");
-        }
-        response.end();
+  console.log(username);
+  console.log(password);
+  // Executez une requête SQL pour vérifier les identifiants de l'utilisateur
+  db.query(
+    
+    "SELECT * FROM users WHERE pseudo_user = ? AND password = ?",
+    [username, password],
+    
+    function (error, results) {
+      if (error) {
+        // Gérer l'erreur de la requête SQL
+        response.status(500).json({ error: "Erreur de base de données" });
+        return;
       }
-    );
-  } else {
-    response.send("Please enter Username and Password!");
-    response.end();
-  }
+      // Vérifier si l'utilisateur existe dans la base de données
+      if (results.length > 0) {
+        // Authentifier l'utilisateur
+        request.session.loggedin = true;
+        request.session.username = username;
+        // Rediriger vers la page d'accueil
+        response.redirect("/app");
+      } else {
+        // Envoyer un message d'erreur si les identifiants sont incorrects
+        response.status(401).json({ error: "Identifiants incorrects" });
+        console.log(response);
+      }
+    }
+  );
 });
 
 app.post("/api/getInfoUsers", function(request){

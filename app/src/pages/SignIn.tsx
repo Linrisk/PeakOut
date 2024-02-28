@@ -148,7 +148,7 @@ const SignIn = () => {
           }}
         >
           <Link to="/login">
-            <label htmlFor="email">Déjà un compte ?</label>
+            <label htmlFor="confirmPassword">Déjà un compte ?</label>
           </Link>
 
           <button type="submit" className="type2">
