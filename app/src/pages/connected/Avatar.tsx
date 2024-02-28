@@ -4,7 +4,7 @@ import { BsScissors } from "react-icons/bs";
 import { FaGlasses } from "react-icons/fa";
 import { GiBeard } from "react-icons/gi";
 import { IoIosColorPalette } from "react-icons/io";
-import { RiTShirt2Fill } from "react-icons/ri";import { IoEyeSharp } from "react-icons/io5";
+import { RiTShirt2Fill } from "react-icons/ri"; import { IoEyeSharp } from "react-icons/io5";
 import { FaPencilAlt } from "react-icons/fa";
 import { BsEmojiSmile } from "react-icons/bs";
 import { TbColorPicker } from "react-icons/tb";
@@ -83,7 +83,7 @@ function ChooseAvatarPage() {
       case "hairColor":
         return <IoIosColorPalette className="icon-options-avatar" />;
       case "skinColor":
-        return <RiTShirt2Fill style={{color:'white'}} className="icon-options-avatar" />;
+        return <RiTShirt2Fill style={{ color: 'white' }} className="icon-options-avatar" />;
       case "eyeType":
         return <IoEyeSharp className="icon-options-avatar" />;
       case "eyebrowType":
@@ -116,7 +116,7 @@ function ChooseAvatarPage() {
 
       <Avatar
         style={{ width: "300px", height: "300px" }}
-        
+
         {...avatarOptions}
       />
       <div

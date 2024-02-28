@@ -1,0 +1,89 @@
+.Params {
+    gap: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.title svg {
+    color: rgb(73, 73, 73);
+    font-size: 30px;
+    margin-top: 20%;
+    background-color: #e7e3ff;
+    width: 44px;
+    height: 37px;
+    border-radius: 20px;
+}
+
+.title {
+    color: rgb(108, 36, 52);
+    font-size: 30px;
+    text-align: left;
+    display: flex;
+    border-bottom: 2px solid rgb(114, 114, 114);
+    gap: 3%;
+}
+
+.title h1 {
+    margin-right: 20%;
+}
+
+.ConcertsList {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    margin: auto;
+    margin-top: 5%;
+    padding-top: 20%
+    justify-content: center;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.Concerts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5%;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.Concerts img {
+    object-fit: none;
+    margin-right: auto;
+    height: 18vh;
+    width: 18vh;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.ConcertsDesc {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    gap: 10%;
+}
+
+.ConcertsDesc h2 {
+    font-size: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+}
+
+.ConcertsDesc p {
+    font-size: 10px;
+    margin: 0;
+}
+
+.ConcertsInfos {
+    margin-bottom: 5%;
+}
+
+.ConcertsPlace {
+    margin-bottom: 5%;
+}
